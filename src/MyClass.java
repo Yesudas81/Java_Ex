@@ -5,7 +5,7 @@ public class MyClass
     Scanner scanner=new Scanner(System.in);
     Beach[] beaches=new Beach[4];
 
-    static int findBeachWithLowestRating(Beach[] beaches)
+    static int findBeachWithLowestRating()
     {
         return 0;
     }
