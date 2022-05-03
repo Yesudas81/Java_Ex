@@ -1,5 +1,6 @@
 public class Beach
 {
+
     private int beachId;
     private String beachName;
     private String location;
@@ -7,7 +8,7 @@ public class Beach
     private int rating;
     private int avgVisitorsPerDay;
 
-    public Beach(int beachId, String beachName, String location, String beachType, int rating, int avgVisitorsPerDay)
+    /*public Beach(int beachId, String beachName, String location, String beachType, int rating, int avgVisitorsPerDay)
     {
         this.beachId = beachId;
         this.beachName = beachName;
@@ -15,7 +16,7 @@ public class Beach
         this.beachType = beachType;
         this.rating = rating;
         this.avgVisitorsPerDay = avgVisitorsPerDay;
-    }
+    }*/
 
     public int getBeachId()
     {
