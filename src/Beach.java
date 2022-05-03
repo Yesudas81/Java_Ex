@@ -1,15 +1,10 @@
 public class Beach
 {
     private int beachId;
-
     private String beachName;
-
     private String location;
-
     private String beachType;
-
     private int rating;
-
     private int avgVisitorsPerDay;
 
     public Beach(int beachId, String beachName, String location, String beachType, int rating, int avgVisitorsPerDay)
