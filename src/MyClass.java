@@ -2,30 +2,62 @@ import java.util.Scanner;
 
 public class MyClass
 {
-    Scanner scanner=new Scanner(System.in);
-    Beach[] beaches=new Beach[4];
-
-    static int findBeachWithLowestRating()
+    static int findBeachWithLowestRating(Beach[] beaches)
     {
-        return 0;
+        int min=beaches[0].getRating();
+        for(int i=1;i<4;i++)
+        {
+            if(beaches[i].getRating()<min)
+            {
+                min=beaches[i].getRating();
+            }
+        }
+        return min;
     }
 
     public static void main(String[] args)
     {
-        MyClass myClass=new MyClass();
+        int beachId=0;
+        String beachName=null;
+        String location=null;
+        String beachType=null;
+        int rating=0;
+        int avgVisitorsPerDay=0;
+
+        Beach beache=new Beach(beachId,beachName,location,beachType,rating,avgVisitorsPerDay);
+
+        Scanner scanner=new Scanner(System.in);
+        Beach[] beaches=new Beach[4];
+
         for(int i=0;i<4;i++)
         {
-            int beachId=myClass.scanner.nextInt();
-            String beachName=myClass.scanner.next();
-            String location=myClass.scanner.next();
-            String beachType=myClass.scanner.next();
-            int rating=myClass.scanner.nextInt();
-            int avgVisitorsPerDay=myClass.scanner.nextInt();
-            myClass.beaches[i]=new Beach(beachId,beachName,location,beachType,rating,avgVisitorsPerDay);
+            beachId=scanner.nextInt();
+            beaches[i]=beache;
+            beache.setBeachId(beachId);
+
+            beachName=scanner.next();
+            beaches[i]=beache;
+            beache.setBeachName(beachName);
+
+            location=scanner.next();
+            beaches[i]=beache;
+            beache.setLocation(location);
+
+            beachType=scanner.next();
+            beaches[i]=beache;
+            beache.setBeachType(beachType);
+
+            rating=scanner.nextInt();
+            beaches[i]=beache;
+            beache.setRating(rating);
+
+            avgVisitorsPerDay=scanner.nextInt();
+            beaches[i]=beache;
+            beache.setAvgVisitorsPerDay(avgVisitorsPerDay);
+
+            beaches[i]=new Beach(beachId,beachName,location,beachType,rating,avgVisitorsPerDay);
         }
-        for(int i=0;i<4;i++)
-        {
-            System.out.println(myClass.beaches[i].getRating());
-        }
+        int res=MyClass.findBeachWithLowestRating(beaches);
+        System.out.println(res);
     }
 }
